@@ -45,20 +45,9 @@ def login():
                 login_user(user)
                 load_user(user.get_id())
                 flash('Logged in successfully.', 'success')
-                return redirect(url_for("secure-page"))
+                return redirect(url_for("secure_page"))
             else:
                 flash('Username or Password is incorrect.', 'danger')
-            # using your model, query database for a user based on the username
-            # and password submitted. Remember you need to compare the password hash.
-            # You will need to import the appropriate function to do so.
-            # Then store the result of that query to a `user` variable so it can be
-            # passed to the login_user() method below.
-
-            # get user id, load into session
-            
-
-            # remember to flash a message to the user
-              # they should be redirected to a secure-page route instead
     return render_template("login.html", form=form)
 
 
